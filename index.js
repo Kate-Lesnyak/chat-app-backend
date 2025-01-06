@@ -9,20 +9,12 @@ mongoose.connect(DB_HOST)
     .then(() => app.listen(PORT, () => {
         console.log('Database connection successfully');
         console.log(`Server running on port ${PORT}`)
+
+
     }))
     .catch(error => {
         console.log(error.message);
+        console.error('Error details:', err.message);
         process.exit(1);
     });
 
-// const connectDB = async () => {
-//     try {
-//         await mongoose.connect(DB_HOST);
-//         console.log('Database connection successfully')
-//     } catch (error) {
-//         console.log(error.message);
-// console.error('Error connecting to MongoDB:', error);
-//         process.exit(1)
-//     }
-// }
-// connectDB();
